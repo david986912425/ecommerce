@@ -20,7 +20,7 @@ interface Filters {
     category: string
     minPrice: number
     maxPrice: number
-    sortOrder: "default" | "asc" | "desc"
+    sortOrder: string
 }
 
 export default function ProductsClient() {
