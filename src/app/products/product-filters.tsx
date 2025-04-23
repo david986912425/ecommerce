@@ -1,20 +1,21 @@
 "use client"
 
 import type React from "react"
-
-import {useState, useEffect} from "react"
+import {useEffect, useState} from "react"
 import styles from "./page.module.css"
 import {Trash} from "lucide-react";
 
+interface Filters {
+    category: string
+    minPrice: number
+    maxPrice: number
+    sortOrder: string
+}
+
 interface FiltersProps {
     categories: string[]
-    filters: {
-        category: string
-        minPrice: number
-        maxPrice: number
-        sortOrder: string
-    }
-    onFilterChange: (filters: any) => void
+    filters: Filters
+    onFilterChange: (filters: Partial<Filters>) => void
 }
 
 export default function ProductFilters({categories, filters, onFilterChange}: FiltersProps) {
