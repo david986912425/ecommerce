@@ -16,6 +16,13 @@ interface Product {
     category: string
 }
 
+interface Filters {
+    category: string
+    minPrice: number
+    maxPrice: number
+    sortOrder: "default" | "asc" | "desc"
+}
+
 export default function ProductsClient() {
     const [products, setProducts] = useState<Product[]>([])
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
@@ -88,7 +95,7 @@ export default function ProductsClient() {
 
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage)
 
-    const handleFilterChange = (newFilters: any) => {
+    const handleFilterChange = (newFilters: Partial<Filters>) => {
         setFilters({...filters, ...newFilters})
     }
 
