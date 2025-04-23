@@ -1,0 +1,222 @@
+.main {
+    min-height: 100vh;
+}
+
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.heroImageContainer {
+    position: absolute;
+    inset: 0;
+}
+
+.carouselSection {
+    width: 100%;
+}
+
+.contentSection {
+    padding: 30px 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.productCard {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    padding: 16px;
+}
+
+.productCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.productImage {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.productTitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 8px 0;
+}
+
+.productPrice {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00704A;
+}
+
+.featuresSection {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.featureCard {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
+}
+
+.featureIconWrapper {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 112, 74, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.featureIcon {
+    width: 32px;
+    height: 32px;
+    color: #00704a;
+}
+
+.featureTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.featureText {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Newsletter Section */
+.newsletterSection {
+    padding: 80px 0;
+    background-color: #f2f2f2;
+}
+
+.newsletterContent {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletterTitle {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.newsletterText {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.newsletterForm {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletterInput {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px 0 0 6px;
+    font-size: 1rem;
+}
+
+.newsletterInput:focus {
+    outline: none;
+    border-color: #00704a;
+}
+
+.newsletterButton {
+    background-color: #00704a;
+    color: white;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    padding: 0 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.newsletterButton:hover {
+    background-color: #005a3b;
+}
+
+@media (max-width: 1024px) {
+    .productsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .productsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contentSection {
+        padding: 40px 0;
+    }
+
+    .sectionTitle {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .productsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .productCard {
+        height: 250px;
+    }
+}
+

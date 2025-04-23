@@ -1,0 +1,490 @@
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Estilos para los filtros */
+.filtersContainer {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filtersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.filtersTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.resetButton {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.resetButton:hover {
+    background-color: #f0f0f0;
+}
+
+.filterIcon {
+    margin-right: 0.25rem;
+}
+
+.filtersGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+    .filtersGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.filterSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filterLabel {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.selectInput {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 0.875rem;
+}
+
+.accordionContainer {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.accordionButton {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordionButton:hover {
+    background-color: #eee;
+}
+
+.accordionIcon {
+    transition: transform 0.2s;
+}
+
+.accordionOpen .accordionIcon {
+    transform: rotate(180deg);
+}
+
+.accordionContent {
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.priceRangeContainer {
+    padding: 0.5rem 0;
+}
+
+.priceInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.priceInputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.priceLabel {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.rangeInput {
+    width: 100%;
+}
+
+.priceValue {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Estilos para la cuadrícula de productos */
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.loadingGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.loadingFilters {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.loadingFilterGrid {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.loadingCard {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+}
+
+.loadingContent {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.loadingSkeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 4px;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Estilos para las tarjetas de productos */
+.productCard {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.productCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.productCard:hover .productImage {
+    transform: scale(1.05);
+}
+
+.categoryBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.wishlistButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: transform 0.2s;
+}
+
+.wishlistButton:hover {
+    transform: scale(1.1);
+}
+
+.heartIcon {
+    color: #999;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.liked {
+    color: #e53e3e;
+}
+
+.productContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+}
+
+.productTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.productDescription {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.productPrice {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0070f3;
+    margin-top: auto;
+}
+
+.productFooter {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.addToCartButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #0070f3;
+    color: white;
+
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.addToCartButton:hover {
+    background-color: #0060df;
+}
+
+.cartIcon {
+    margin-right: 0.25rem;
+}
+
+/* Estilos para la paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 0.5rem;
+}
+
+.paginationNumbers {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.paginationNumber {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.paginationNumber:hover {
+    background-color: #f5f5f5;
+}
+
+.paginationActive {
+    background-color: #0070f3;
+    color: white;
+    border-color: #0070f3;
+}
+
+.paginationActive:hover {
+    background-color: #0060df;
+}
+
+.paginationArrow {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.paginationArrow:hover:not(.paginationDisabled) {
+    background-color: #f5f5f5;
+}
+
+.paginationDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.paginationEllipsis {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+/* Estilos para mensajes de resultados */
+.noResults {
+    text-align: center;
+    padding: 3rem 0;
+    color: #666;
+}
+
+.resultsCount {
+    text-align: right;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.navBrand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+}
+
+.navList {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    margin-left: 1.5rem;
+}
+
+.navLink {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: #0070f3;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .filtersContainer {
+        padding: 1rem;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+}
