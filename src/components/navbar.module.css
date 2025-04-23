@@ -1,5 +1,6 @@
 .header {
     width: 100%;
+    position: relative;
 }
 
 .announcementBar {
@@ -17,6 +18,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 20px;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    object-fit: contain;
+    height: auto;
+    max-height: 60px;
+}
+
+.navIcons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
 .searchContainer {
@@ -54,20 +73,6 @@
     color: #78716c;
 }
 
-.logoContainer {
-    /*display: flex;*/
-}
-
-.logo {
-    object-fit: contain;
-}
-
-.navIcons {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
 .navLink {
     color: #292524;
     font-size: 14px;
@@ -81,6 +86,8 @@
 .iconLink {
     color: #292524;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .iconLink:hover {
@@ -116,4 +123,131 @@
 
 .categoryLink:hover {
     color: #292524;
+}
+
+/* Hamburger menu button (hidden by default) */
+.menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menuIcon {
+    height: 24px;
+    width: 24px;
+    color: #292524;
+}
+
+/* Mobile menu container (hidden by default) */
+.mobileMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobileMenu.open {
+    display: flex;
+}
+
+.mobileSearchContainer {
+    display: none;
+    width: 100%;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .mainNavbar {
+        padding: 15px 16px;
+    }
+
+    .searchContainer {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainNavbar {
+        padding: 12px 16px;
+    }
+
+    .searchContainer {
+        width: 200px;
+    }
+
+    .logo {
+        max-height: 50px;
+    }
+
+    .navIcons {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .menuToggle {
+        display: block;
+    }
+
+    .searchContainer {
+        display: none;
+    }
+
+    .mobileSearchContainer {
+        display: block;
+    }
+
+    .navIcons {
+        gap: 12px;
+    }
+
+    /* Hide desktop icons on mobile */
+    .iconLink {
+        display: none;
+    }
+
+    /* Show mobile menu when open */
+    .mobileMenu.open {
+        display: flex;
+    }
+
+    .mobileIconLink {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #292524;
+        text-decoration: none;
+        padding: 12px 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .mobileIconLink:last-child {
+        border-bottom: none;
+    }
+
+    .mobileIcon {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-height: 40px;
+    }
+
+    .mainNavbar {
+        padding: 10px 12px;
+    }
 }

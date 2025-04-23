@@ -3,9 +3,9 @@
 import Navbar from "@/components/navbar"
 import styles from "./page.module.css"
 import Carousel from "@/components/carousel";
-import ProductCard from "@/components/ProductCard";
-import {ShoppingBag, TrendingUp, Truck} from "lucide-react";
 import {useEffect, useState} from "react";
+import Features from "@/components/features/features";
+import ProductCard from "@/components/ProductCard";
 
 interface Product {
     _id: string
@@ -60,33 +60,7 @@ export default function HomePage() {
                 <Carousel images={carouselImages} autoplayInterval={5000}/>
             </section>
 
-            <section className={styles.featuresSection}>
-                <div className={styles.container}>
-                    <div className={styles.featuresGrid}>
-                        <div className={styles.featureCard}>
-                            <div className={styles.featureIconWrapper}>
-                                <Truck className={styles.featureIcon}/>
-                            </div>
-                            <h3 className={styles.featureTitle}>Envío Gratuito</h3>
-                            <p className={styles.featureText}>En pedidos superiores a 50€</p>
-                        </div>
-                        <div className={styles.featureCard}>
-                            <div className={styles.featureIconWrapper}>
-                                <ShoppingBag className={styles.featureIcon}/>
-                            </div>
-                            <h3 className={styles.featureTitle}>Garantía de Calidad</h3>
-                            <p className={styles.featureText}>2 años en todos nuestros productos</p>
-                        </div>
-                        <div className={styles.featureCard}>
-                            <div className={styles.featureIconWrapper}>
-                                <TrendingUp className={styles.featureIcon}/>
-                            </div>
-                            <h3 className={styles.featureTitle}>Diseño Exclusivo</h3>
-                            <p className={styles.featureText}>Piezas únicas para tu hogar</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Features/>
 
             <section className={styles.contentSection}>
                 <div className={styles.container}>
@@ -100,20 +74,18 @@ export default function HomePage() {
             </section>
 
             <section className={styles.newsletterSection}>
-                <div className={styles.container}>
-                    <div className={styles.newsletterContent}>
-                        <h2 className={styles.newsletterTitle}>Suscríbete</h2>
-                        <p className={styles.newsletterText}>
-                            Recibe las últimas novedades y ofertas exclusivas directamente en tu correo.
-                        </p>
-                        <form className={styles.newsletterForm}>
-                            <input type="email" placeholder="Tu correo electrónico" className={styles.newsletterInput}
-                                   required/>
-                            <button type="submit" className={styles.newsletterButton}>
-                                Suscribirse
-                            </button>
-                        </form>
-                    </div>
+                <div className={styles.newsletterContent}>
+                    <h2 className={styles.newsletterTitle}>Suscríbete</h2>
+                    <p className={styles.newsletterText}>
+                        Recibe las últimas novedades y ofertas exclusivas directamente en tu correo.
+                    </p>
+                    <form className={styles.newsletterForm}>
+                        <input type="email" placeholder="Tu correo electrónico" className={styles.newsletterInput}
+                               required/>
+                        <button type="submit" className={styles.newsletterButton}>
+                            Suscribirse
+                        </button>
+                    </form>
                 </div>
             </section>
         </main>
