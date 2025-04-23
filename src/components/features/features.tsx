@@ -10,7 +10,7 @@ export default function Features() {
                         <Truck className={styles.featureIcon}/>
                     </div>
                     <h3 className={styles.featureTitle}>Envío Gratuito</h3>
-                    <p className={styles.featureText}>En pedidos superiores a 50€</p>
+                    <p className={styles.featureText}>En pedidos superiores a S/50</p>
                 </div>
                 <div className={styles.featureCard}>
                     <div className={styles.featureIconWrapper}>
