@@ -1,8 +1,19 @@
+"use client"
+
 import Navbar from "@/components/navbar"
 import styles from "./page.module.css"
 import Carousel from "@/components/carousel";
 import ProductCard from "@/components/ProductCard";
 import {ShoppingBag, TrendingUp, Truck} from "lucide-react";
+import {useEffect, useState} from "react";
+
+interface Product {
+    _id: string
+    title: string
+    price: number
+    image: string
+    category?: string
+}
 
 export default function HomePage() {
 
@@ -25,32 +36,21 @@ export default function HomePage() {
         },
     ]
 
-    const products = [
-        {
-            "_id": "1",
-            "title": "Producto 1",
-            "price": 10,
-            "image": "https://i.pinimg.com/236x/05/bf/e9/05bfe9c112e34d569c0a39aa61e8b63f.jpg",
-            "category": "Prueba",
-            "stock": 1
-        },
-        {
-            "_id": "2",
-            "title": "Producto 2",
-            "price": 10,
-            "image": "https://i.pinimg.com/236x/05/bf/e9/05bfe9c112e34d569c0a39aa61e8b63f.jpg",
-            "category": "Prueba",
-            "stock": 1
-        },
-        {
-            "_id": "3",
-            "title": "Producto 3",
-            "price": 10,
-            "image": "https://i.pinimg.com/236x/05/bf/e9/05bfe9c112e34d569c0a39aa61e8b63f.jpg",
-            "category": "Prueba",
-            "stock": 1
-        }
-    ]
+    const [products, setProducts] = useState<Product[]>([]);
+
+    useEffect(() => {
+        const fetchLatestProducts = async () => {
+            try {
+                const res = await fetch("/api/products/last");
+                const data = await res.json();
+                setProducts(data);
+            } catch (error) {
+                console.error("Error al cargar productos:", error);
+            }
+        };
+
+        fetchLatestProducts();
+    }, []);
 
 
     return (
