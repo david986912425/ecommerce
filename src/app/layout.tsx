@@ -7,12 +7,22 @@ const inter = Inter({subsets: ["latin"]})
 
 export const metadata: Metadata = {
     title: "Señoras | Productos del hogar con estilo",
-    description: "Descubre los mejores productos del hogar diseñados especialmente para mujeres con estilo. Novedades, decoración, y funcionalidad para tu hogar.",
-    keywords: ["productos del hogar", "decoración", "mujeres", "señoras", "novedades hogar", "estilo de vida", "hogar con estilo"],
-    authors: [{name: "Tu Marca"}],
+    description:
+        "Descubre los mejores productos del hogar diseñados especialmente para mujeres con estilo. Novedades, decoración, y funcionalidad para tu hogar.",
+    keywords: [
+        "productos del hogar",
+        "decoración",
+        "mujeres",
+        "señoras",
+        "novedades hogar",
+        "estilo de vida",
+        "hogar con estilo",
+    ],
+    authors: [{ name: "Tu Marca" }],
     openGraph: {
         title: "Señoras | Productos del hogar con estilo",
-        description: "Inspiración y novedades en productos del hogar pensados para mujeres modernas.",
+        description:
+            "Inspiración y novedades en productos del hogar pensados para mujeres modernas.",
         type: "website",
         locale: "es_ES",
         siteName: "Señoras",
@@ -20,8 +30,11 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
-    }
-}
+    },
+    verification: {
+        google: "zNe5wmCjJdd3NIM8pJR4-TSYCyYGw1noxRCGCwnhdHg",
+    },
+};
 
 export default function RootLayout({
                                        children,
