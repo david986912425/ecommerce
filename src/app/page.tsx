@@ -57,7 +57,10 @@ export default function HomePage() {
         <main className={styles.main}>
             <Navbar/>
             <section className={styles.carouselSection}>
-                <Carousel images={carouselImages} autoplayInterval={5000}/>
+                <h1 className={styles.mainHeading}>
+                    Bienvenida a Señoras – Productos del hogar con estilo
+                </h1>
+                <Carousel images={carouselImages} autoplayInterval={5000} />
             </section>
 
             <Features/>
